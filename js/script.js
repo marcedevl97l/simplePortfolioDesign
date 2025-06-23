@@ -11,16 +11,29 @@ window.addEventListener("scroll", () => {
 const darkModeToggle = document.getElementById("dark-mode-toggle");
 const body = document.body;
 
+const animateDarkMode = () => {
+  body.classList.add('darkmode-anim');
+  setTimeout(() => {
+    body.classList.remove('darkmode-anim');
+    body.classList.add('darkmode-anim-end');
+    setTimeout(() => {
+      body.classList.remove('darkmode-anim-end');
+    }, 1000);
+  }, 10);
+};
+
 const enableDarkMode = () => {
   body.classList.add("dark-mode");
   localStorage.setItem("darkMode", "enabled");
-  darkModeToggle.textContent = "☀️"; // Icono de sol
+  darkModeToggle.textContent = "☀️";
+  animateDarkMode();
 };
 
 const disableDarkMode = () => {
   body.classList.remove("dark-mode");
   localStorage.setItem("darkMode", "disabled");
-  darkModeToggle.textContent = "🌙"; // Icono de luna
+  darkModeToggle.textContent = "🌙";
+  animateDarkMode();
 };
 
 // Comprobar la preferencia del usuario al cargar la página
@@ -28,7 +41,6 @@ if (localStorage.getItem("darkMode") === "enabled") {
   enableDarkMode();
 }
 
-// Añadir evento al botón
 darkModeToggle.addEventListener("click", () => {
   if (localStorage.getItem("darkMode") !== "enabled") {
     enableDarkMode();
@@ -41,18 +53,18 @@ darkModeToggle.addEventListener("click", () => {
 const certs = {
   frontend: {
     img: "images/cert-frontend.jpg",
-    desc: "Certificación de Desarrollo Web Front-end y Back-end por Lambda School (2020-2021).",
+    desc: "Administración de Bases de Datos y Ciberseguridad (2025).",
     pdf: "certs/cert-frontend.pdf",
   },
   responsive: {
-    img: "images/cert-responsive.jpg",
-    desc: "Certificación en Diseño Web Adaptativo por freeCodeCamp (2022).",
-    pdf: "certs/cert-responsive.pdf",
+    img: "/images/intro admin linux.jpg",
+    desc: "Introduccion a la administracion de servidores Linux (2025).",
+    pdf: "assets/pdf/Introduccion a la administracion de servidores Linux.pdf",
   },
-  algorithms: {
-    img: "images/cert-algorithms.jpg",
-    desc: "Certificación en Algoritmos y Estructuras de Datos en JavaScript por freeCodeCamp (2022).",
-    pdf: "certs/cert-algorithms.pdf",
+  ccna: {
+    img: "/images/manejo de recursos.jpg",
+    desc: "Administracion de servidores manejo de recursos (2025).",
+    pdf: "assets/pdf/Administracion de servidores manejo de recursos.pdf",
   },
 };
 

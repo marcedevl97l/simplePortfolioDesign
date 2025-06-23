@@ -12,10 +12,10 @@
         <nav>
           <h1>MARCELO REYES MONTENEGRO</h1>
           <ul>
-            <li><a href="#">Sobre mí</a></li>
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contacto">Contacto</a></li>
             <li>
               <button id="dark-mode-toggle" class="dark-mode-btn">🌙</button>
             </li>
@@ -25,7 +25,7 @@
     </header>
 
     <main>
-      <div class="container hero-section">
+      <div class="container hero-section" id="sobre-mi">
         <div class="hero-content">
           <div class="text">
             <h2>
@@ -69,7 +69,7 @@
       </div>
     </main>
 
-    <section class="projects">
+    <section class="projects" id="proyectos">
       <div class="container">
         <h2>Proyectos</h2>
         <p>
@@ -117,23 +117,30 @@
         <h2>Estudios y Certificaciones</h2>
         <div class="education-list">
           <div class="education-item">
-            <h3>Desarrollo Web Front-end y Back-end</h3>
-            <p>Lambda School | 2020 - 2021</p>
+            <h3>Administración de Bases de Datos y Ciberseguridad</h3>
+            <p>SISE | 2024 - Presente</p>
             <button class="view-cert-btn btn light" data-cert="frontend">
               Visualizar
             </button>
           </div>
           <div class="education-item">
-            <h3>Certificación en Diseño Web Adaptativo</h3>
-            <p>freeCodeCamp | 2022</p>
+            <h3>Introduccion a la administracion de servidores Linux</h3>
+            <p>Linux | 2025</p>
             <button class="view-cert-btn btn light" data-cert="responsive">
               Visualizar
             </button>
           </div>
           <div class="education-item">
-            <h3>Algoritmos y Estructuras de Datos en JavaScript</h3>
-            <p>freeCodeCamp | 2022</p>
+            <h3>Administracion de servidores manejo de recursos</h3>
+            <p>Platzi | 2025</p>
             <button class="view-cert-btn btn light" data-cert="algorithms">
+              Visualizar
+            </button>
+          </div>
+          <div class="education-item">
+            <h3>CISCO CCNA1 en progreso..</h3>
+            <p>CISCO | 2025</p>
+            <button class="view-cert-btn btn light" data-cert="ccna">
               Visualizar
             </button>
           </div>
@@ -178,11 +185,16 @@
           style="max-width: 100%; border-radius: 8px; margin-bottom: 16px"
         />
         <p id="cert-desc">Descripción de la certificación.</p>
+        <br>
         <a id="cert-pdf" href="#" download class="btn dark" target="_blank"
           >Descargar PDF</a
         >
       </div>
     </div>
+
+    <!-- Blog y Contacto pueden ser placeholders si no existen -->
+    <section id="blog" style="display:none;"></section>
+    <section id="contacto" style="display:none;"></section>
 
     <script src="js/script.js"></script>
   </body>
