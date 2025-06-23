@@ -476,3 +476,75 @@ body.dark-mode .skills-list span:nth-child(7) { background: #e0e0e0; }
 html {
   scroll-behavior: smooth;
 }
+
+.projects .tech-badges span:nth-child(1) { background: #ffd1b3; color: #333; } /* HTML */
+.projects .tech-badges span:nth-child(2) { background: #b3d1ff; color: #333; } /* CSS */
+.projects .tech-badges span:nth-child(3) { background: #fff9b3; color: #333; } /* JavaScript */
+.projects .tech-badges span:nth-child(4) { background: #b3f0ff; color: #333; } /* React */
+.projects .tech-badges span:nth-child(5) { background: #b3ffcc; color: #333; } /* Node.js */
+
+body.dark-mode .projects .tech-badges span:nth-child(1) { background: #ffd1b3; color: #222; }
+body.dark-mode .projects .tech-badges span:nth-child(2) { background: #b3d1ff; color: #222; }
+body.dark-mode .projects .tech-badges span:nth-child(3) { background: #fff9b3; color: #222; }
+body.dark-mode .projects .tech-badges span:nth-child(4) { background: #b3f0ff; color: #222; }
+body.dark-mode .projects .tech-badges span:nth-child(5) { background: #b3ffcc; color: #222; }
+
+.highlight-grey, .skills-list span, .projects .tech-badges span {
+  border: none !important;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+  margin-left: 10px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: background 0.4s, color 0.4s;
+}
+.lang-btn:hover {
+  background: #e5e7eb;
+}
+body.dark-mode .lang-btn {
+  color: #e0e0e0;
+  background: none;
+}
+body.dark-mode .lang-btn:hover {
+  background: #333;
+}
+
+.telegram-btn {
+  background: #229ED9;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 8px;
+  transition: background 0.4s, transform 0.4s, box-shadow 0.4s;
+  box-shadow: 0 2px 8px rgba(34,158,217,0.15);
+  margin-left: 6px;
+  font-size: 2rem;
+  border: none;
+  width: 60px;
+  height: 50px;
+}
+.telegram-btn:hover {
+  background: #37b3e6;
+  transform: scale(1.13) rotate(-8deg);
+  box-shadow: 0 4px 16px rgba(34,158,217,0.25);
+}
+.telegram-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+body.dark-mode .telegram-btn {
+  background: #176B87;
+  color: #fff;
+}
+body.dark-mode .telegram-btn:hover {
+  background: #229ED9;
+}
