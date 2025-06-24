@@ -130,28 +130,28 @@ let currentLang = "es";
 
 const translations = {
   es: {
-    nav: ["Sobre mí", "Proyectos", "Blog", "Contacto"],
+    nav: ["Sobre mí", "Proyectos", "Conocimientos", "Contacto"],
     hero: '¡Hola! Soy Marcelo, un <span class="highlight-purple">desarrollador</span> con sede en Lima - Perú.',
     heroP1:
       'Me apasiona construir soluciones que sean <span class="highlight-pink">eficientes</span>, <span class="highlight-purple">robustas</span> y <span class="highlight-yellow">confiables</span>.<br />Soy un desarrollador con enfoque en <span class="highlight-red">Linux</span> y <span class="highlight-blue">DevOps</span>, comprometido con la automatización, la mejora continua y el uso inteligente de la tecnología para generar cambios reales.<br />Mi experiencia abarca desde la administración de servidores hasta la implementación de infraestructuras reproducibles, pipelines de CI/CD y prácticas de seguridad.<br />He trabajado en entornos que valoran la <span class="highlight-pink">adaptabilidad</span>, la <span class="highlight-yellow">transparencia</span> y la <span class="highlight-red">colaboración efectiva</span>, y estoy constantemente explorando nuevas herramientas que impulsen la eficiencia y el impacto en cada proyecto.',
-    heroP2:
-      "Actualmente estoy buscando un nuevo rol como desarrollador. <br />",
+    heroP2: "Actualmente estoy buscando un nuevo rol como desarrollador. <br />",
     linkedin: "Ver Linkedin",
     github: "Ver Github",
     youtube: "YouTube",
     proyectos: "Proyectos",
-    proyectosDesc:
-      "Algunos de los proyectos personales en los que estoy trabajando actualmente:",
-    portafolio: "Sitio web de portafolio minimalista",
-    portafolioDesc:
-      "¡Lo estás viendo! Construí este portafolio para que sea fácilmente personalizable para que cualquiera pueda usarlo.",
+    proyectosDesc: "Algunos de los proyectos personales en los que he trabajado, y trabajo actualmente:",
+    proyecto1: "Sitio web Selling Houses 🏠",
+    proyecto1Desc: "Sitio web simple creado con Bootsrap.",
+    proyecto2: "Sistema de Monitoreo con Prometheus + Grafana 📊",
+    proyecto2Desc: "Pequeño proyecto para monitorear un servidor Ubuntu, que actualmente tiene montado un servidor minecraft.",
+    proyecto3: "Scripts para Monitoreo de Recursos 📊",
+    proyecto3Desc: "Scripts personalizables.",
     verGithub: "Ver en Github",
-    proximo: "Próximamente",
-    proximoDesc:
-      "Este proyecto está actualmente en desarrollo. ¡Vuelve pronto para ver las actualizaciones!",
+    visitar: "Visitar",
+    enProgreso: "In proges..",
     estudios: "Estudios y Certificaciones",
     habilidades: "Habilidades Técnicas",
-    derechos: "&copy; 2024 Delba de Oliveira. Todos los derechos reservados.",
+    derechos: "&copy; 2025 Marcelo Sebastian Reyes Montenegro. Todos los derechos reservados.",
     certs: [
       {
         title: "Administración de Bases de Datos y Ciberseguridad",
@@ -177,9 +177,10 @@ const translations = {
     certModalDesc: "Descripción de la certificación.",
     certModalBtn: "Descargar PDF",
     certModalAlt: "Certificación",
+    socialLinks: ["LinkedIn", "GitHub", "Twitter"],
   },
   en: {
-    nav: ["About me", "Projects", "Blog", "Contact"],
+    nav: ["About me", "Projects", "Skills", "Contact"],
     hero: 'Hi! I\'m Marcelo, a <span class="highlight-purple">developer</span> based in Lima - Peru.',
     heroP1:
       'I am passionate about building <span class="highlight-pink">efficient</span>, <span class="highlight-purple">robust</span> and <span class="highlight-yellow">reliable</span> solutions.<br />I am a developer focused on <span class="highlight-red">Linux</span> and <span class="highlight-blue">DevOps</span>, committed to automation, continuous improvement and the smart use of technology to create real change.<br />My experience ranges from server administration to implementing reproducible infrastructures, CI/CD pipelines and security practices.<br />I have worked in environments that value <span class="highlight-pink">adaptability</span>, <span class="highlight-yellow">transparency</span> and <span class="highlight-red">effective collaboration</span>, and I am constantly exploring new tools that drive efficiency and impact in every project.',
@@ -188,17 +189,19 @@ const translations = {
     github: "View Github",
     youtube: "YouTube",
     proyectos: "Projects",
-    proyectosDesc: "Some of the personal projects I am currently working on:",
-    portafolio: "Minimalist portfolio website",
-    portafolioDesc:
-      "You are looking at it! I built this portfolio to be easily customizable for anyone to use.",
+    proyectosDesc: "Some of the personal projects I have worked on, and currently work on:",
+    proyecto1: "Selling Houses Website 🏠",
+    proyecto1Desc: "Simple website created with Bootstrap.",
+    proyecto2: "Monitoring System with Prometheus + Grafana 📊",
+    proyecto2Desc: "Small project to monitor an Ubuntu server, which currently has a Minecraft server mounted.",
+    proyecto3: "Resource Monitoring Scripts 📊",
+    proyecto3Desc: "Customizable scripts.",
     verGithub: "View on Github",
-    proximo: "Coming soon",
-    proximoDesc:
-      "This project is currently under development. Check back soon for updates!",
+    visitar: "Visit",
+    enProgreso: "In progress..",
     estudios: "Education & Certifications",
     habilidades: "Technical Skills",
-    derechos: "&copy; 2024 Delba de Oliveira. All rights reserved.",
+    derechos: "&copy; 2025 Marcelo Sebastian Reyes Montenegro. All rights reserved.",
     certs: [
       {
         title: "Database Administration and Cybersecurity",
@@ -224,6 +227,7 @@ const translations = {
     certModalDesc: "Certification description.",
     certModalBtn: "Download PDF",
     certModalAlt: "Certification",
+    socialLinks: ["LinkedIn", "GitHub", "Twitter"],
   },
 };
 
@@ -245,70 +249,76 @@ langToggle.addEventListener("click", () => {
   fadeBodyOutIn(() => {
     currentLang = currentLang === "es" ? "en" : "es";
     langToggle.textContent = currentLang === "es" ? "EN" : "ES";
+    
     // Navegación
     document.querySelectorAll("nav ul li a").forEach((el, i) => {
       el.textContent = translations[currentLang].nav[i];
     });
+    
     // Hero
-    document.querySelector(".hero-content h2").innerHTML =
-      translations[currentLang].hero;
-    document.querySelectorAll(".hero-content p")[0].innerHTML =
-      translations[currentLang].heroP1;
-    document.querySelectorAll(".hero-content p")[1].innerHTML =
-      translations[currentLang].heroP2;
+    document.querySelector(".hero-content h2").innerHTML = translations[currentLang].hero;
+    document.querySelectorAll(".hero-content p")[0].innerHTML = translations[currentLang].heroP1;
+    document.querySelectorAll(".hero-content p")[1].innerHTML = translations[currentLang].heroP2;
+    
     // Botones principales
-    document.querySelectorAll(".buttons .btn")[0].textContent =
-      translations[currentLang].linkedin;
-    document.querySelectorAll(".buttons .btn")[1].textContent =
-      translations[currentLang].github;
-    document.querySelectorAll(".buttons .btn")[2].textContent =
-      translations[currentLang].youtube;
+    document.querySelectorAll(".buttons .btn")[0].textContent = translations[currentLang].linkedin;
+    document.querySelectorAll(".buttons .btn")[1].textContent = translations[currentLang].github;
+    
     // Proyectos
-    document.querySelector(".projects h2").textContent =
-      translations[currentLang].proyectos;
-    document.querySelector(".projects > .container > p").textContent =
-      translations[currentLang].proyectosDesc;
-    document.querySelectorAll(".project-content h3")[0].textContent =
-      translations[currentLang].portafolio;
-    document.querySelectorAll(".project-content p")[0].textContent =
-      translations[currentLang].portafolioDesc;
-    document.querySelectorAll(".project-content .btn")[0].textContent =
-      translations[currentLang].verGithub;
-    document.querySelectorAll(".project-content h3")[1].textContent =
-      translations[currentLang].proximo;
-    document.querySelectorAll(".project-content p")[1].textContent =
-      translations[currentLang].proximoDesc;
-    document.querySelectorAll(".project-content .btn")[1].textContent =
-      translations[currentLang].verGithub;
+    document.querySelector(".projects h2").textContent = translations[currentLang].proyectos;
+    document.querySelector(".projects > .container > p").textContent = translations[currentLang].proyectosDesc;
+    
+    // Proyecto 1 - Selling Houses
+    document.querySelectorAll(".project-content h3")[0].textContent = translations[currentLang].proyecto1;
+    document.querySelectorAll(".project-content p")[0].textContent = translations[currentLang].proyecto1Desc;
+    document.querySelectorAll(".project-content .btn")[0].textContent = translations[currentLang].verGithub;
+    document.querySelectorAll(".project-content .btn")[1].textContent = translations[currentLang].visitar;
+    
+    // Proyecto 2 - Sistema de Monitoreo
+    document.querySelectorAll(".project-content h3")[1].textContent = translations[currentLang].proyecto2;
+    document.querySelectorAll(".project-content p")[1].textContent = translations[currentLang].proyecto2Desc;
+    document.querySelectorAll(".project-content .btn")[2].textContent = translations[currentLang].verGithub;
+    
+    // Proyecto 3 - Scripts para Monitoreo
+    document.querySelectorAll(".project-content h3")[2].textContent = translations[currentLang].proyecto3;
+    document.querySelectorAll(".project-content p")[2].textContent = translations[currentLang].proyecto3Desc;
+    document.querySelectorAll(".project-content .btn")[3].textContent = translations[currentLang].verGithub;
+    document.querySelectorAll(".project-content .btn")[4].textContent = translations[currentLang].enProgreso;
+    
     // Estudios y habilidades
-    document.querySelector(".education h2").textContent =
-      translations[currentLang].estudios;
-    document.querySelector(".skills h2").textContent =
-      translations[currentLang].habilidades;
+    document.querySelector(".education h2").textContent = translations[currentLang].estudios;
+    document.querySelector(".skills h2").textContent = translations[currentLang].habilidades;
+    
     // Footer
-    document.querySelector("footer .container p").innerHTML =
-      translations[currentLang].derechos;
+    document.querySelector("footer .container p").innerHTML = translations[currentLang].derechos;
+    
+    // Enlaces sociales del footer
+    document.querySelectorAll(".social-links a").forEach((el, i) => {
+      if (translations[currentLang].socialLinks[i]) {
+        el.textContent = translations[currentLang].socialLinks[i];
+      }
+    });
+    
     // Certificaciones
     document.querySelectorAll(".education-item h3").forEach((el, i) => {
-      if (translations[currentLang].certs[i])
+      if (translations[currentLang].certs[i]) {
         el.textContent = translations[currentLang].certs[i].title;
+      }
     });
     document.querySelectorAll(".education-item p").forEach((el, i) => {
-      if (translations[currentLang].certs[i])
+      if (translations[currentLang].certs[i]) {
         el.textContent = translations[currentLang].certs[i].inst;
+      }
     });
-    document
-      .querySelectorAll(".education-item .view-cert-btn")
-      .forEach((el, i) => {
-        if (translations[currentLang].certs[i])
-          el.textContent = translations[currentLang].certs[i].btn;
-      });
+    document.querySelectorAll(".education-item .view-cert-btn").forEach((el, i) => {
+      if (translations[currentLang].certs[i]) {
+        el.textContent = translations[currentLang].certs[i].btn;
+      }
+    });
+    
     // Modal de certificación
-    document.getElementById("cert-desc").textContent =
-      translations[currentLang].certModalDesc;
-    document.getElementById("cert-pdf").textContent =
-      translations[currentLang].certModalBtn;
-    document.getElementById("cert-img").alt =
-      translations[currentLang].certModalAlt;
+    document.getElementById("cert-desc").textContent = translations[currentLang].certModalDesc;
+    document.getElementById("cert-pdf").textContent = translations[currentLang].certModalBtn;
+    document.getElementById("cert-img").alt = translations[currentLang].certModalAlt;
   });
 });
