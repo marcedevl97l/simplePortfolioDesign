@@ -601,8 +601,8 @@ body.dark-mode .telegram-btn:hover {
   background: #229ed9;
 }
 
-.youtube-btn {
-  background: #ff0000;
+.whatsapp-btn {
+  background: #25d366;
   color: #fff;
   display: flex;
   align-items: center;
@@ -610,29 +610,29 @@ body.dark-mode .telegram-btn:hover {
   padding: 0;
   border-radius: 8px;
   transition: background 0.4s, transform 0.4s, box-shadow 0.4s;
-  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.15);
   margin-left: 6px;
   font-size: 2rem;
   border: none;
   width: 60px;
   height: 50px;
 }
-.youtube-btn:hover {
-  background: #c20000;
+.whatsapp-btn:hover {
+  background: #128c7e;
   transform: scale(1.13) rotate(-8deg);
-  box-shadow: 0 4px 16px rgba(255, 0, 0, 0.25);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.25);
 }
-.youtube-icon {
+.whatsapp-icon {
   display: block;
   width: 28px;
   height: 28px;
 }
-body.dark-mode .youtube-btn {
-  background: #c20000;
+body.dark-mode .whatsapp-btn {
+  background: #128c7e;
   color: #fff;
 }
-body.dark-mode .youtube-btn:hover {
-  background: #ff0000;
+body.dark-mode .whatsapp-btn:hover {
+  background: #25d366;
 }
 
 /*Responsive*/
